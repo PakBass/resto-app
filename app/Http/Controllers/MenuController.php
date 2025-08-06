@@ -16,9 +16,24 @@ class MenuController extends Controller
             Session::put('tableNumber', $tableNumber);
         }
 
+        //menampilkan semua item
+        // $items = Item::all();
         $items = Item::where('is_active', 1)->orderBy('name', 'asc')->get();
 
 
         return view('customer.menu', compact('items', 'tableNumber'));
     }
+
+    public function cart()
+    {
+        $cart = Session::get('cart', []);
+        return view('customer.cart', compact('cart'));
+    }
+
+    public function addToCart(Request $request)
+    {
+        
+    }
+
+
 }

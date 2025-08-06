@@ -24,7 +24,9 @@ class ItemFactory extends Factory
             'img' => fake()->randomElement([
                 'https://images.unsplash.com/photo-1591325418441-ff678baf78ef',
                 'https://images.unsplash.com/photo-1564489563601-c53cfc451e93',
-                'https://images.unsplash.com/photo-1683315446874-e6a629087ef8'
+                'https://images.unsplash.com/photo-1683315446874-e6a629087ef8',
+                'https://images.unsplash.com/photo-1512621776951-a57141f2eefd',
+                'https://images.unsplash.com/photo-1730190980621-fd6fbf6f370e'
             ]),
             'is_active' => fake()->boolean(),
         ];
