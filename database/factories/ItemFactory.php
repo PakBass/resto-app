@@ -17,12 +17,16 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->word(),
-            'description' => fake()->sentence(),
-            'price' => fake()->numberBetween(1000, 100000),
-            'category_id' => fake()->numberBetween(1, 3),
-            'img' => fake()->imageUrl(),
-            'is_active' => fake()->boolean(80), // 80% chance of being active
+            'name' => fake()->words(3, true),
+            'description' => fake()->paragraph(),
+            'price' => fake()->randomElement([50000, 100000, 1000000]),
+            'category_id' => fake()->numberBetween(1, 2),
+            'img' => fake()->randomElement([
+                'https://images.unsplash.com/photo-1591325418441-ff678baf78ef',
+                'https://images.unsplash.com/photo-1564489563601-c53cfc451e93',
+                'https://images.unsplash.com/photo-1683315446874-e6a629087ef8'
+            ]),
+            'is_active' => fake()->boolean(),
         ];
     }
 }
