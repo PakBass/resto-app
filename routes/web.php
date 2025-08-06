@@ -3,15 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 
-Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/', function () {
     return redirect()->route('menu');
 });
 
-Route::get('/cart', function () {
-    return view('customer.cart');
-})->name('cart');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+Route::get('/cart', [MenuController::class, 'cart'])->name('cart');
+Route::post('/cart/add', [MenuController::class, 'addToCart'])->name('cart.add');
+
 
 Route::get('/checkout', function () {
     return view('customer.checkout');
